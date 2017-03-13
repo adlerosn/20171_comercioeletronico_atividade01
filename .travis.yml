@@ -11,6 +11,9 @@ addons:
       - oracle-java8-installer
 sonarqube: true
 
+before_script:
+- export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
 script:
   - php -l *.php
   - sonar-scanner -Dsonar.login=$SONAR_TOKEN
