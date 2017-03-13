@@ -44,5 +44,9 @@ else if($reqMethod==='POST'){
     }
 }
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Methods: GET, POST");
+
 header('Content-Type: application/json');
 echo json_encode($return);
