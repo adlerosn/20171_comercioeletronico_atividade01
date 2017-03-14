@@ -6,10 +6,12 @@ php:
 jdk:
   - oraclejdk8
 addons:
+  sonarqube:
+    token: $SONAR_TOKEN
   apt:
     packages:
       - oracle-java8-installer
-sonarqube: true
+
 
 before_script:
   - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
