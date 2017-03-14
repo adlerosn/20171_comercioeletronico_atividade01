@@ -22,7 +22,7 @@ before_script:
 
 script:
   - php -l *.php
-  - sonar-scanner
+  - sonar-scanner -X
 
 
 cache:
