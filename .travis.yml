@@ -22,7 +22,7 @@ before_script:
 
 script:
   - php -l *.php
-  - sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+  - sonar-scanner
 
 
 cache:
