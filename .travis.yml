@@ -12,7 +12,7 @@ jdk:
 addons:
   sonarqube:
     token:
-      secure: "n8zjVPhA5cV9FcNyQrGxo7GFWsLZEkEJZgUz+Y7rTTQRGr7mF1fk1q4KRPF8/UYu/P2UA3DGCUs6WDlW5Bx8OJhEdd3GsjAcYQPwsEHCnx01BpM4fpeySnDE45fJR464zXofAiPFcJbtJcn90rsbVL78yp+6BBF9Bma21KkeYOe0WVxFlplFZgHFya5WtaLc3ikDSJ/Nzn+I9BHgjeHfLZ8rOf6ei+dfBQO2h+dpw7iRV1ixMYIPRf6l+0hBTBYsWlji81KOtuQD6K8hBv/AYnM1L/xI7Jr/uRvdLPPhRXTo26Q9ZxonLI06xW8QMvkNXICs7uGrEnxuB+n55D2Mg2q+JV0nwa5x9RC5Uc0cwDNRx/nkDS22MB8rDgiBcqR3ZqpVmM1Rk9bJ2GBWyXtvUdV7FJ0ewqLdcj1M388etltrQ+1MTAhS94euVpiesKAxhXzcaJXeHD/IoxvijypVFob9sU6M7Incpr7+cugNz0MkYATDcOYRXyEeFy/mkXu6tn2qeyoZptegE0eJuwIaqTNd/9H+terXc+KxyM82vOKvPDoq/9cmdKnhtR88LF9Rng7gxfzFLHgPiQCHDE9eGiqJg57fFR7J4uwZrqKw6DJ8HeM7Ht0De/dWfdTZSoNNExUvSlOW+xFVhb6Zp4VhRj3PEWJSaK+HYn+jgOwjrss="
+      secure: "ft7dVuspI7Baon4kBVX31Xsv/CeRO8lW4gkT3t9v4snWHVhilKKw94em3FEeAQTDOtvkRjj8GNWDdhCjcjWuIk0aI4KcjGjEtvbfJcDFRn+KXVwZtRGUCqWwd99mF8KSD6KRy1XC6dDfGRTudfBg2cmMpi8QK4Sf7VNymjs+JBslI4fTby01hS4oRZZXruolwkTbcLrC+TAuVORx3wEX0Uxi9Ioe/KYUNlhmDVQHiPjmHrJEIOiJ0sqdYYWMkbTo7OoUMDFwyle6WWmZ7zmaEtxWPDU0WwLXbcuPIqSgpRoYsYJImKxRLfJEjs0IqVrr3K+Mhg9Ong9WJry/qHUaG0nZruaLujIELpBMZwJKNvxdB0jYGOJXggxF9LcBhHcWkzEyvxUM78J5cdfQKmI1sGxXK4/CzDWgDTKKxubEhJ2bagqh9jjsIfbtEWE5FfKA94c+w8mzPbtRAQcHaGOpJa+ueoZxKwSNkvBRLX3fSlg639vkZsYMNdN2By+JgQAkWXNkrs0rC9sMY5UaPWzYtliRSXunIdDOIA/426kAO0geM3GYEs1MmBmy8/1YpXs0Ovl+EymbaoCf+QilvQjnir+F7v/lr/KdMbtkfM5NC2xWcwqXxJrU5RovVIfanjQwn2UYAVjAUbxIkev7jxJjeg0NB1IN+ZVjcOjv4L83W6o="
   apt:
     packages:
       - oracle-java8-installer
@@ -22,7 +22,7 @@ before_script:
 
 script:
   - php -l *.php
-  - sonar-scanner
+  - sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL:9000 -Dsonar.login=$SONAR_TOKEN
 
 
 cache:
