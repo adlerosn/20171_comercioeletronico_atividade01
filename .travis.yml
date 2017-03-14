@@ -11,8 +11,7 @@ jdk:
 
 addons:
   sonarqube:
-    token:
-      secure: "ft7dVuspI7Baon4kBVX31Xsv/CeRO8lW4gkT3t9v4snWHVhilKKw94em3FEeAQTDOtvkRjj8GNWDdhCjcjWuIk0aI4KcjGjEtvbfJcDFRn+KXVwZtRGUCqWwd99mF8KSD6KRy1XC6dDfGRTudfBg2cmMpi8QK4Sf7VNymjs+JBslI4fTby01hS4oRZZXruolwkTbcLrC+TAuVORx3wEX0Uxi9Ioe/KYUNlhmDVQHiPjmHrJEIOiJ0sqdYYWMkbTo7OoUMDFwyle6WWmZ7zmaEtxWPDU0WwLXbcuPIqSgpRoYsYJImKxRLfJEjs0IqVrr3K+Mhg9Ong9WJry/qHUaG0nZruaLujIELpBMZwJKNvxdB0jYGOJXggxF9LcBhHcWkzEyvxUM78J5cdfQKmI1sGxXK4/CzDWgDTKKxubEhJ2bagqh9jjsIfbtEWE5FfKA94c+w8mzPbtRAQcHaGOpJa+ueoZxKwSNkvBRLX3fSlg639vkZsYMNdN2By+JgQAkWXNkrs0rC9sMY5UaPWzYtliRSXunIdDOIA/426kAO0geM3GYEs1MmBmy8/1YpXs0Ovl+EymbaoCf+QilvQjnir+F7v/lr/KdMbtkfM5NC2xWcwqXxJrU5RovVIfanjQwn2UYAVjAUbxIkev7jxJjeg0NB1IN+ZVjcOjv4L83W6o="
+    token: $SONAR_TOKEN
   apt:
     packages:
       - oracle-java8-installer
