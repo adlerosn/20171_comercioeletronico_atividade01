@@ -15,7 +15,6 @@ addons:
 
 before_script:
   - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-  - sh runSonarQubeAnalysis.sh
 
 script:
   - php -l *.php
