@@ -1,3 +1,6 @@
+dist: trusty
+sudo: required
+
 language: php
 
 php:
@@ -5,17 +8,23 @@ php:
 
 jdk:
   - oraclejdk8
+
 addons:
-  sonarqube: true
+  sonarqube:
+    token:
+      secure: "n8zjVPhA5cV9FcNyQrGxo7GFWsLZEkEJZgUz+Y7rTTQRGr7mF1fk1q4KRPF8/UYu/P2UA3DGCUs6WDlW5Bx8OJhEdd3GsjAcYQPwsEHCnx01BpM4fpeySnDE45fJR464zXofAiPFcJbtJcn90rsbVL78yp+6BBF9Bma21KkeYOe0WVxFlplFZgHFya5WtaLc3ikDSJ/Nzn+I9BHgjeHfLZ8rOf6ei+dfBQO2h+dpw7iRV1ixMYIPRf6l+0hBTBYsWlji81KOtuQD6K8hBv/AYnM1L/xI7Jr/uRvdLPPhRXTo26Q9ZxonLI06xW8QMvkNXICs7uGrEnxuB+n55D2Mg2q+JV0nwa5x9RC5Uc0cwDNRx/nkDS22MB8rDgiBcqR3ZqpVmM1Rk9bJ2GBWyXtvUdV7FJ0ewqLdcj1M388etltrQ+1MTAhS94euVpiesKAxhXzcaJXeHD/IoxvijypVFob9sU6M7Incpr7+cugNz0MkYATDcOYRXyEeFy/mkXu6tn2qeyoZptegE0eJuwIaqTNd/9H+terXc+KxyM82vOKvPDoq/9cmdKnhtR88LF9Rng7gxfzFLHgPiQCHDE9eGiqJg57fFR7J4uwZrqKw6DJ8HeM7Ht0De/dWfdTZSoNNExUvSlOW+xFVhb6Zp4VhRj3PEWJSaK+HYn+jgOwjrss="
   apt:
     packages:
       - oracle-java8-installer
 
-
 before_script:
   - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-  - sh runSonarQubeAnalysis.sh
 
 script:
   - php -l *.php
-  - sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+  - sonar-scanner
+
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
