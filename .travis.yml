@@ -15,7 +15,7 @@ addons:
 
 script:
   - php -l *.php
-  - sonar-scanner -X
+  - echo "Will not run: sonar-scanner -X"
 
 
 cache:
