@@ -10,6 +10,9 @@ addons:
     token:
       secure: "vKiBmjgG7d5cZyqr3FM0uY/OVOQEjGz0yDj4auGHef6qRUT4W0I13MDR6+Ai60Pw6bZzb0oseWD76Z7oIg1B2fxNaOOSKOPF6TnLEkPPeOx3g/pLR74TX538BEJipm7kOw32/iSLDfLrvaOWO8rFJTyLD+ouo+LC7+eYhpsMrzdsbHXaZC2henZZ/vcPiwSybtZhtS+55FCBQ+PxyknxQ2sIiyL5ZWtXb72rL5rVIxJjonnZYeq9jEZ+bcIR+Rn/93u8lvINnDXFd9yRhakGd4UcmelN0aO9gaJrakNaBMvsEaWmF9GDGKSs5g9NOgoskR0fiQlVHIos6Ki84ATwJUJcOWVAqQF2g95Xy7Odvxx9f/nz13rpAL5wF3ONHBbiNmSexXEw/1bJF0p68WP5PDN0JsHQ7nBI4oeRvTJI1Hv2RPFv/XTZXqnup4S/Ow9NTpIqkFJmi0ZA9iyRF0nAmVGUvcStYCfex+8KibKMwJ+NXhIq07wEGoCbntzJ29DZO3g9MqxjUPOK5sGGbaY1pBxqyBOTHxdVXCaMETZ9r5oYno+PlOmgC8HDvoWBWqntfs9kDns9Gp225N8bhrqAOS1At+GBwnocEmdMG0b5gNTMI3/W2cAKuggCkr92O8SlC81w5Fqb4qcIyEPsdWLH/MqhQyzHN+VaV2jnJ+h/DLQ="
 
+before_script:
+  - sh runSonarQubeAnalysis.sh
+
 script:
   - php -l *.php
   - sonar-scanner -Dsonar.login=$SONAR_TOKEN
