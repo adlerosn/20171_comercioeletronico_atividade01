@@ -18,4 +18,4 @@ before_script:
 
 script:
   - php -l *.php
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
+  - sonar-scanner
