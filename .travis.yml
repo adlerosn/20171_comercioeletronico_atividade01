@@ -11,11 +11,12 @@ jdk:
 
 addons:
   sonarqube:
+    organization: "adlerosn-github"
     token: $SONAR_TOKEN
 
 script:
   - php -l *.php
-  - echo 'Will not run sonar-scanner -X'
+  - sonar-scanner -X
 
 
 cache:
