@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/adlerosn/20171_comercioeletronico_atividade01.svg?branch=master)](https://travis-ci.org/adlerosn/20171_comercioeletronico_atividade01)
+[![Quality Gate](https://sonarqube.com/api/badges/gate?key=20171_comercioeletronico_atv01)](https://sonarqube.com/dashboard/index/20171_comercioeletronico_atv01)
+
 7º período \ Comércio Eletronico \ 2017-1 \ Atividade 01
 =============================================
 
