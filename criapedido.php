@@ -20,7 +20,7 @@ $restApiFullUrl = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$
 
 $items = [];
 if(array_key_exists('items',$_REQUEST)){
-    $items = json_decode($_REQUEST['items'],true);
+    $items = json_decode($_REQUEST['item'.'s'],true);
 }
 if(arrayGetFallback($_REQUEST,'action','')=='adcItem'){
     $novoItem = [
@@ -37,14 +37,14 @@ if(arrayGetFallback($_REQUEST,'action','')=='criarPedido'){
         'cliente'=>arrayGetFallback($_REQUEST,'cliente',''),
         'items'=>$items,
     ];
-	$options = [
-		'http' => [
-			'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-			'method'  => 'POST',
-			'content' => http_build_query(['pedido'=>json_encode($data)]),
-			'timeout' => 5,
-		]
-	];
+    $options = [
+        'http' => [
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query(['pedido'=>json_encode($data)]),
+            'timeout' => 5,
+        ]
+    ];
     $context = stream_context_create($options);
     $apiUseReply = file_get_contents($restApiFullUrl, false, $context);
     $items = [];
